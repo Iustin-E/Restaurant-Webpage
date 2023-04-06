@@ -2,34 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <a href="#" id="logo">LOGO</a>
+        <a id="logo">Restaurant</a>
 
         <input type="checkbox" id="menu-bar-button">
-        <label for="menu-bar-button">Burger</label>
-        
+        <label for="menu-bar-button"><img src="img/burger-icon.svg" alt="menu-icon"></label>
+
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Menu</a>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="menu.html">Menu</a>
                     <ul>
-                        <li><a href="#">Food</a></li>
+                        <li><a href="#">Soup</a></li>
+                        <li><a href="#">Grill</a></li>
+                        <li><a href="#">Pizza</a></li>
+                        <li><a href="#">Salads</a></li>
                         <li><a href="#">Drinks</a></li>
                         <li><a href="#">Deserts</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Location</a></li>
-                <li><a href="#">Contact</a></li>
-
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
+
+    <div class="gallery">
+        <div class="card">
+            <img src="img/soup.jpg" alt="soup-image">
+            <p>Soup</p>
+        </div>
+        <div class="card">
+            <img src="img/pizza.jpg" alt="pizza-image">
+            <p>Pizza</p>
+        </div>
+        <div class="card">
+            <img src="img/cookies.jpg" alt="cookies-image">
+            <p>Sweets</p>
+        </div>
+        <div class="card">
+            <img src="img/salad.jpg" alt="salad-image">
+            <p>Salad</p>
+        </div>
+    </div>
 </body>
 </html>
