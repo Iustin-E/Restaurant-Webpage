@@ -152,6 +152,39 @@ header nav ul li ul li{
     text-align: center;
 }
 
+article{
+    margin-top:250px;
+    background-color: rgb(0, 0, 0, .5);
+    width: 60%;
+    margin-left: 20%;
+    color: white;
+    padding: 50px;
+
+    font-size: 1.25rem;
+}
+
+/* About us */
+
+.about-us h1{
+    font-size: 3rem;
+    padding: 10px 25px 10px 0px;
+}
+
+/* Menu */
+
+.menu{
+    margin-top:150px;
+}
+
+.menu h2{
+    font-size: 2rem;
+    margin-top: 50px;
+    margin-bottom: 15px;
+}
+.menu ul li{
+    font-size: 1.5rem;
+}
+
 footer{
     font-size: 1rem;
     color:white;
@@ -203,6 +236,12 @@ header nav ul li ul li{
     display:initial;
 }
 
+article{
+    width: 80%;
+    margin: 10%;
+    margin-top: 150px;
+}
+
 /* Cards */
 
 .gallery{
@@ -229,4 +268,9 @@ header nav ul li ul li{
     grid-template-rows: repeat(6, 300px);
 }
 
+article{
+    width:100%;
+    margin:0;
+    margin-top: 150px;
+}
 }
