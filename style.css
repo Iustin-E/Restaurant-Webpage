@@ -164,7 +164,7 @@ section{
 
 /* About us */
 
-.about-us h1{
+#about-us h1{
     font-size: 3rem;
     padding: 10px 25px 10px 0px;
 }
