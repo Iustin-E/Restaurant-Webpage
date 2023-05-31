@@ -33,15 +33,19 @@
         </nav>
     </header>
 
-    <section class="contact">
+    <section id="contact">
         <h2 class="reservation-text">Make a reservation today!</h2>
-        <textarea name="name" id="name" rows="1" cols="100" placeholder="Your Name"></textarea>
-        <textarea name="email" id="email" rows="1" cols="100" placeholder="Email"></textarea>
-        <h2>Date:</h2>
-        <input id="date" type="date">
-        <h2>Number of seats:</h2>
-        <input id="nrpers" type="number">
-        <input id="submit" value="Submit!" type="submit">
+        <form id="form" action="https://undeva.com" method="post">
+            <label for="nume">Nume:</label>
+            <input id = "name" type="text" name="name" rows="1" cols="100" placeholder="Your Name" required></input>
+            <label for="nume">Email:</label>
+            <input id = "email" type="text" name="email" rows="1" cols="100" placeholder="Your Email" required></input>
+            <label for="date">Date:</label>
+            <input id="date" type="date" required>
+            <label for="nrpers">Number of seats:</label>
+            <input id="nrpers" type="number" required>
+            <input id="submit" value="Submit!" type="submit">
+        </form>
 
 
     </section>

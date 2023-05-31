@@ -207,28 +207,31 @@ section{
     margin-bottom: 10px;
 }
 
-.contact textarea{
+#contact .reservation-text{
+    margin-bottom: 50px;
+}
+
+#contact #name, #contact #email{
     width: 100%;
     background-color: rgb(0, 0, 0, .1);
     color: white;
     margin-bottom: 25px;
     font-size: 1.4rem;
-
 }
 
-.contact #date{
+#contact #date{
     display: block;
     width: 50%;
     font-size: 1.5rem;
 }
 
-.contact #nrpers{
+#contact #nrpers{
     display:block;
     width:50%;
     font-size: 1.5rem;
 }
 
-.contact #submit{
+#contact #submit{
     display:block;
     width:200px;
     height:60px;
@@ -239,17 +242,34 @@ section{
     margin-top:20px;
 }
 
-.contact #submit:hover{
+#contact #submit:hover{
     background-color: rgb(40, 40, 40);
     color:rgb(187, 120, 76);
     border: rgb(187, 120, 76) 2px solid;
     cursor: pointer;
 }
 
-.contact #submit:active{
+#contact #submit:active{
     background-color: rgb(187, 120, 76);
     color:rgb(40, 40, 40);
     border: 2px rgb(40, 40, 40) solid;
+}
+
+#contact .reservation{
+    height: 200px;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: palegoldenrod;
+    border: 2px black solid;
+    color: black;
+    font-size: 0.9rem;
+}
+
+#contact .reservation > button{
+    width: 100px;
+    height: 50px;
+    background-color: rgb(187, 120, 76);
+    color:white;
 }
 
 footer{
@@ -280,7 +300,7 @@ header label:hover{
     background-color: rgb(40, 40, 40);
 }
 
-.contact{
+#contact{
     margin-top: 300px;
 }
 
