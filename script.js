@@ -1,32 +1,5 @@
 let randomBeer;
 window.onload = function () {
-      for (var i = 0; i < localStorage.length; i++) {
-            console.log(
-                  localStorage.key(i),
-                  localStorage.getItem(localStorage.key(i))
-            );
-      }
-
-      // ? Color changing logo - nu stiu daca mai e necesar
-      let logo = document.getElementById('logo');
-      logo.addEventListener(
-            'click',
-            function () {
-                  if (logo.style.color === 'firebrick')
-                        logo.style.color = 'darkorange';
-                  else if (logo.style.color === 'darkorange')
-                        logo.style.color = 'yellow';
-                  else if (logo.style.color === 'yellow')
-                        logo.style.color = 'green';
-                  else if (logo.style.color === 'green')
-                        logo.style.color = 'blue';
-                  else if (logo.style.color === 'blue')
-                        logo.style.color = 'magenta';
-                  else logo.style.color = 'firebrick';
-            },
-            false
-      );
-
       const menu = document.getElementsByClassName('menu')[0];
       if (menu) {
             // RANDOM BEER API
@@ -63,10 +36,6 @@ window.onload = function () {
       // localStorage.clear();
       let contact = document.getElementById('contact');
       if (contact) {
-            if (!localStorage.getItem('rezervareCnt')) {
-                  localStorage.setItem('rezervareCnt', 0);
-            }
-
             const submitButton = document.getElementById('submit');
             submitButton.addEventListener('click', (e) => {
                   e.preventDefault();
@@ -125,9 +94,14 @@ window.onload = function () {
                   newReservation.appendChild(infoDelete);
 
                   setTimeout(() => {
+                        removeReservationFromLocalStorage(
+                              name,
+                              email,
+                              dateStr,
+                              noSeats
+                        );
                         clearInterval(cntdown);
                         contact.removeChild(newReservation);
-                        removeReservationFromLocalStorage(newReservation);
                         // TODO: remove from localStorage
                   }, 3000);
             });
@@ -153,9 +127,27 @@ window.onload = function () {
             localStorage.setItem('rezervari', JSON.stringify(rezervariArray));
       }
 
-      // TODO
-      function removeReservationFromLocalStorage(newReservation) {
-            console.log(newReservation);
+      // * DONE
+      function removeReservationFromLocalStorage(name, email, date, nrpers) {
+            console.log(name, email, date, nrpers);
+            let rezervariStr = localStorage.getItem('rezervari');
+            let rezervariArray = JSON.parse(rezervariStr);
+            console.log(rezervariArray);
+            for (let i = 0; i < rezervariArray.length; i++) {
+                  if (
+                        rezervariArray[i][0].toUpperCase() ===
+                              name.toUpperCase() &&
+                        rezervariArray[i][1].toUpperCase() ===
+                              email.toUpperCase() &&
+                        rezervariArray[i][2] === date &&
+                        parseInt(rezervariArray[i][3]) === parseInt(nrpers)
+                  ) {
+                        console.log('AM GASIT. STERGEM');
+                        rezervariArray.splice(i, 1);
+                  }
+            }
+            rezervariStr = JSON.stringify(rezervariArray);
+            localStorage.setItem('rezervari', rezervariStr);
       }
 
       // * DONE
