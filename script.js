@@ -32,6 +32,9 @@ window.onload = function () {
                         menu.appendChild(rbName);
                         menu.appendChild(rbDesc);
                         menu.appendChild(rbImg);
+                  })
+                  .catch((err) => {
+                        console.log('There was an error:', err);
                   });
       }
       // localStorage.clear();
