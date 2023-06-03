@@ -1,374 +1,369 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    text-decoration: none;
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+      text-decoration: none;
 }
 
-body{
-    min-height:100vh;
-    background-image: url(img/background.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+body {
+      min-height: 100vh;
+      background-image: url(img/background.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
 }
 
-header{
-    position:fixed;
-    top:0;
-    right:0;
-    left:0;
-    padding: 10px;
-    background-color: rgb(187, 120, 76, .9);
-    display:flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-between;
+header {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      padding: 10px;
+      background-color: rgb(187, 120, 76, 0.9);
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
 }
 
-#logo{
-    color:rgb(40, 40, 40);
-    font-size: 40px;
-    padding:0;
-    margin:0;
+#logo {
+      color: rgb(40, 40, 40);
+      font-size: 40px;
+      padding: 0;
+      margin: 0;
 }
 
-#logo::before{
-    content: url(img/logo.svg);
-    display: inline-block;
-    width: 80px;
-    height: 80px;
-    padding:0;
-    margin:0;
+#logo::before {
+      content: url(img/logo.svg);
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      padding: 0;
+      margin: 0;
 }
 
-header #menu-bar-button{
-    display:none;
+header #menu-bar-button {
+      display: none;
 }
 
-header label{
-    display:none;
-    font-size: 2rem;
-    color:rgb(40, 40, 40);
-    padding: 5px 20px;
-    border: 1px solid rgb(40, 40, 40);
-    border-radius: 15px;
-    float:right;
+header label {
+      display: none;
+      font-size: 2rem;
+      color: rgb(40, 40, 40);
+      padding: 5px 20px;
+      border: 1px solid rgb(40, 40, 40);
+      border-radius: 15px;
+      float: right;
 }
 
-header label img{
-    height:50px;
-    width: auto;
+header label img {
+      height: 50px;
+      width: auto;
 }
 
-header nav ul{
-    list-style: none;
+header nav ul {
+      list-style: none;
 }
 
-header nav ul li{
-    position: relative;
-    float:left;
-    border-left: 2px solid rgb(40, 40, 40);
+header nav ul li {
+      position: relative;
+      float: left;
+      border-left: 2px solid rgb(40, 40, 40);
 }
 
-header nav ul li a{
-    color: rgb(40, 40, 40);
-    display:block;
-    font-size:1.5rem;
-    padding:5px 20px;
+header nav ul li a {
+      color: rgb(40, 40, 40);
+      display: block;
+      font-size: 1.5rem;
+      padding: 5px 20px;
 }
 
-header nav ul li a:hover{
-    background-color: rgb(40, 40, 40);
-    color:rgb(187, 120, 76);
-    transition: all .5s ease-out;
+header nav ul li a:hover {
+      background-color: rgb(40, 40, 40);
+      color: rgb(187, 120, 76);
+      transition: all 0.5s ease-out;
 }
 
-header nav ul li a:active{
-    background-color:rgb(187, 120, 76);
-    color:rgb(40, 40, 40);
+header nav ul li a:active {
+      background-color: rgb(187, 120, 76);
+      color: rgb(40, 40, 40);
 }
 
 /* pt dropdown */
 
-header nav ul li ul{
-    display:none;
-    position:absolute;
-    left:0;
-    width:150px;
-    background-color: rgb(187, 120, 76);
+header nav ul li ul {
+      display: none;
+      position: absolute;
+      left: 0;
+      width: 150px;
+      background-color: rgb(187, 120, 76);
 }
 
-header nav ul li:hover > ul{
-    display:block;
+header nav ul li:hover > ul {
+      display: block;
 }
 
-header nav ul li ul li{
-    width:100%;
-    border-top: 3px solid rgb(40, 40, 40);
+header nav ul li ul li {
+      width: 100%;
+      border-top: 3px solid rgb(40, 40, 40);
 }
 
 /* Cards */
 
-#gallery{
-    display: grid;
-    grid-template-rows: repeat(2, 300px);
-    grid-template-columns: repeat(3, 250px);
-    gap: 15px;
-    background-color: rgb(0, 0, 0, .1);
-    justify-content: center;;
+#gallery {
+      display: grid;
+      grid-template-rows: repeat(2, 300px);
+      grid-template-columns: repeat(3, 250px);
+      gap: 15px;
+      background-color: rgb(0, 0, 0, 0.1);
+      justify-content: center;
 
-    margin-top: 200px;
-    padding-top:20px;
-    z-index: 1;
+      margin-top: 200px;
+      padding-top: 20px;
+      z-index: 1;
 }
 
-.card{
-    width: 250px;
-    height: 300px;
-    background-color: #eee;
-    margin-bottom: 20px;
-    /*transition: transform 1.5s, background-color 1s, color 1s;*/
+.card {
+      width: 250px;
+      height: 300px;
+      background-color: #eee;
+      margin-bottom: 20px;
+      /*transition: transform 1.5s, background-color 1s, color 1s;*/
 }
 
-.card:hover{
-    background-color: rgb(187, 120, 76);
-    color:rgb(40, 40, 40);
-    transform: rotate(360deg);
+.card:hover {
+      background-color: rgb(187, 120, 76);
+      color: rgb(40, 40, 40);
+      transform: rotate(360deg);
 }
 
-.card img{
-    width: 250px;
-    height:250px;
-    object-fit: cover;
-    
+.card img {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
 }
 
-.card p{
-    font-size: 25px;
-    font-weight: 700;
-    text-align: center;
+.card p {
+      font-size: 25px;
+      font-weight: 700;
+      text-align: center;
 }
 
-section{
-    margin-top:250px;
-    background-color: rgb(0, 0, 0, .5);
-    width: 60%;
-    margin-left: 20%;
-    color: white;
-    padding: 50px;
+section {
+      margin-top: 250px;
+      background-color: rgb(0, 0, 0, 0.5);
+      width: 60%;
+      margin-left: 20%;
+      color: white;
+      padding: 50px;
 
-    font-size: 1.25rem;
+      font-size: 1.25rem;
 }
 
 /* About us */
 
-#about-us h1{
-    font-size: 3rem;
-    padding: 10px 25px 10px 0px;
+#about-us h1 {
+      font-size: 3rem;
+      padding: 10px 25px 10px 0px;
 }
 
 /* Menu */
 
-.menu{
-    margin-top:150px;
+.menu {
+      margin-top: 150px;
 }
 
-.menu h2{
-    font-size: 2rem;
-    margin-top: 50px;
-    margin-bottom: 15px;
+.menu h2 {
+      font-size: 2rem;
+      margin-top: 50px;
+      margin-bottom: 15px;
 }
-.menu ul li{
-    font-size: 1.5rem;
-}
-
-.reviews-container{
-    display:grid;
-    background-color: rgb(0, 0, 0, .5);
-    grid-template-columns: repeat(2, 450px);
-    grid-template-rows: repeat(3, 200px);
-    gap: 15px;
-    padding: 45px;
-    justify-content: center;
+.menu ul li {
+      font-size: 1.5rem;
 }
 
-.review{
-    margin: 10px;
-    border: 2px rgb(187, 120, 76) solid;
-    border-radius: 10px;
-
-    font-size: 1.1rem;
+.reviews-container {
+      display: grid;
+      background-color: rgb(0, 0, 0, 0.5);
+      grid-template-columns: repeat(2, 450px);
+      grid-template-rows: repeat(3, 200px);
+      gap: 15px;
+      padding: 45px;
+      justify-content: center;
 }
 
-.review h2{
-    font-size: 1.3rem;
-    margin-bottom: 10px;
+.review {
+      margin: 10px;
+      border: 2px rgb(187, 120, 76) solid;
+      border-radius: 10px;
+
+      font-size: 1.1rem;
 }
 
-#contact .reservation-text{
-    margin-bottom: 50px;
+.review h2 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
 }
 
-#contact #name, #contact #email{
-    width: 100%;
-    background-color: rgb(0, 0, 0, .1);
-    color: white;
-    margin-bottom: 25px;
-    font-size: 1.4rem;
+#contact .reservation-text {
+      margin-bottom: 50px;
 }
 
-#contact #date{
-    display: block;
-    width: 50%;
-    font-size: 1.5rem;
+#contact #name,
+#contact #email {
+      width: 100%;
+      background-color: rgb(0, 0, 0, 0.1);
+      color: white;
+      margin-bottom: 25px;
+      font-size: 1.4rem;
 }
 
-#contact #nrpers{
-    display:block;
-    width:50%;
-    font-size: 1.5rem;
+#contact #date {
+      display: block;
+      width: 50%;
+      font-size: 1.5rem;
 }
 
-#contact #submit{
-    display:block;
-    width:200px;
-    height:60px;
-    background-color: rgb(187, 120, 76);
-    color:rgb(40, 40, 40);
-    border: 2px rgb(40, 40, 40) solid;
-    border-radius: 20px;
-    margin-top:20px;
+#contact #nrpers {
+      display: block;
+      width: 50%;
+      font-size: 1.5rem;
 }
 
-#contact #submit:hover{
-    background-color: rgb(40, 40, 40);
-    color:rgb(187, 120, 76);
-    border: rgb(187, 120, 76) 2px solid;
-    cursor: pointer;
+#contact #submit {
+      display: block;
+      width: 200px;
+      height: 60px;
+      background-color: rgb(187, 120, 76);
+      color: rgb(40, 40, 40);
+      border: 2px rgb(40, 40, 40) solid;
+      border-radius: 20px;
+      margin-top: 20px;
 }
 
-#contact #submit:active{
-    background-color: rgb(187, 120, 76);
-    color:rgb(40, 40, 40);
-    border: 2px rgb(40, 40, 40) solid;
+#contact #submit:hover {
+      background-color: rgb(40, 40, 40);
+      color: rgb(187, 120, 76);
+      border: rgb(187, 120, 76) 2px solid;
+      cursor: pointer;
 }
 
-#contact .reservation{
-    height: 200px;
-    padding: 20px;
-    margin-top: 20px;
-    background-color: palegoldenrod;
-    border: 2px black solid;
-    color: black;
-    font-size: 0.9rem;
+#contact #submit:active {
+      background-color: rgb(187, 120, 76);
+      color: rgb(40, 40, 40);
+      border: 2px rgb(40, 40, 40) solid;
 }
 
-#contact .reservation > button{
-    width: 100px;
-    height: 50px;
-    background-color: rgb(187, 120, 76);
-    color:white;
+#contact .reservation {
+      height: 200px;
+      padding: 20px;
+      margin-top: 20px;
+      background-color: palegoldenrod;
+      border: 2px black solid;
+      color: black;
+      font-size: 0.9rem;
 }
 
-footer{
-    font-size: 1rem;
-    color:white;
-    float: right;
-    margin-top: 50px;
-    padding: 20px;
+#contact .reservation > button {
+      width: 100px;
+      height: 50px;
+      background-color: rgb(187, 120, 76);
+      color: white;
 }
 
-    @media(max-width:1550px){
-.reviews-container{
-    grid-template-columns: 450px;
+footer {
+      font-size: 1rem;
+      color: white;
+      float: right;
+      margin-top: 50px;
+      padding: 20px;
 }
 
+@media (max-width: 1550px) {
+      .reviews-container {
+            grid-template-columns: 450px;
+      }
 }
 
+@media (max-width: 1100px) {
+      header label {
+            display: initial;
+            cursor: pointer;
+      }
 
-    @media(max-width:1100px){
+      header label:hover {
+            color: rgb(187, 120, 76);
+            background-color: rgb(40, 40, 40);
+      }
 
-header label{
-    display:initial;
-    cursor: pointer;
+      #contact {
+            margin-top: 300px;
+      }
+
+      /* BUG: menu not working in touch simulation*/
+
+      header nav {
+            display: none;
+            background-color: rgb(203, 140, 98);
+            position: absolute;
+            top: 100%;
+            right: 0;
+            left: 0;
+            z-index: 2;
+      }
+
+      header nav ul li {
+            position: relative;
+            width: 100%;
+      }
+
+      header nav ul li ul {
+            position: relative;
+            width: 100%;
+      }
+
+      header nav ul li ul li {
+            background-color: rgb(213, 173, 114);
+      }
+
+      #menu-bar-button:checked ~ nav {
+            display: initial;
+      }
+
+      section {
+            width: 80%;
+            margin: 10%;
+            margin-top: 150px;
+      }
+
+      /* Cards */
+
+      .gallery {
+            grid-template-columns: repeat(2, 250px);
+            grid-template-rows: repeat(3, 300px);
+      }
 }
 
-header label:hover{
-    color:rgb(187, 120, 76);
-    background-color: rgb(40, 40, 40);
-}
+@media (max-width: 650px) {
+      /* Header*/
 
-#contact{
-    margin-top: 300px;
-}
+      #logo {
+            font-size: 2.5rem;
+      }
+      #logo::before {
+            width: 50px;
+      }
 
-/* BUG: menu not working in touch simulation*/
+      /* Cards */
+      .gallery {
+            grid-template-columns: 250px;
+            grid-template-rows: repeat(6, 300px);
+      }
 
-header nav{
-    display:none;
-    background-color: rgb(203, 140, 98);
-    position:absolute;
-    top:100%;
-    right:0;
-    left:0;
-    z-index:2;
-}
-
-header nav ul li{
-    position:relative;
-    width:100%;
-}
-
-header nav ul li ul{
-    position:relative;
-    width: 100%;
-}
-
-header nav ul li ul li{
-    background-color: rgb(213, 173, 114);
-}
-
-#menu-bar-button:checked ~ nav{
-    display:initial;
-}
-
-section{
-    width: 80%;
-    margin: 10%;
-    margin-top: 150px;
-}
-
-/* Cards */
-
-.gallery{
-    grid-template-columns: repeat(2, 250px);
-    grid-template-rows: repeat(3, 300px);
-}
-
-}
-
-    @media(max-width:650px){
-
-/* Header*/
-
-#logo{
-    font-size: 2.5rem;
-}
-#logo::before{
-    width: 50px;
-}
-
-/* Cards */
-.gallery{
-    grid-template-columns: 250px;
-    grid-template-rows: repeat(6, 300px);
-}
-
-section{
-    width:100%;
-    margin:0;
-    margin-top: 150px;
-}
+      section {
+            width: 100%;
+            margin: 0;
+            margin-top: 150px;
+      }
 }

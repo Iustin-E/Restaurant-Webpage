@@ -3,6 +3,7 @@ window.onload = function () {
       const menu = document.getElementsByClassName('menu')[0];
       if (menu) {
             // RANDOM BEER API
+            // TODO error handling
             fetch('https://api.punkapi.com/v2/beers/random')
                   .then((response) => {
                         return response.json();
@@ -36,8 +37,17 @@ window.onload = function () {
       // localStorage.clear();
       let contact = document.getElementById('contact');
       if (contact) {
+            // TODO Show date somewhere
+            let date = new Date(Date.now());
+            let year = date.getFullYear();
+            let mon = date.getMonth();
+            let day = date.getDate();
+            console.log(date);
+            console.log(day + '-' + mon + '-' + year);
+
+            const form = document.getElementById('form');
             const submitButton = document.getElementById('submit');
-            submitButton.addEventListener('click', (e) => {
+            form.addEventListener('submit', (e) => {
                   e.preventDefault();
                   const nume = document.getElementById('name').value;
                   const email = document.getElementById('email').value;
@@ -45,7 +55,6 @@ window.onload = function () {
                   const nrpers = document.getElementById('nrpers').value;
                   addReservation(nume, email, date, nrpers);
 
-                  const form = document.getElementById('form');
                   form.reset();
             });
 
@@ -57,7 +66,6 @@ window.onload = function () {
             addReservationToLocalStoarge(name, email, dateStr, noSeats);
       }
 
-      // * DONE
       function addReservationDOM(name, email, dateStr, noSeats) {
             const newReservation = document.createElement('div');
             newReservation.classList.add('reservation');
@@ -109,7 +117,6 @@ window.onload = function () {
             newReservation.appendChild(deleteReservation);
       }
 
-      // * DONE
       function addReservationToLocalStoarge(nume, email, dateStr, noSeats) {
             // ? mai trebuie check pt rezervariStr? e verificat/creat deja in loadReservations()
             let rezervariStr = localStorage.getItem('rezervari');
@@ -127,7 +134,6 @@ window.onload = function () {
             localStorage.setItem('rezervari', JSON.stringify(rezervariArray));
       }
 
-      // * DONE
       function removeReservationFromLocalStorage(name, email, date, nrpers) {
             console.log(name, email, date, nrpers);
             let rezervariStr = localStorage.getItem('rezervari');
@@ -140,7 +146,7 @@ window.onload = function () {
                         rezervariArray[i][1].toUpperCase() ===
                               email.toUpperCase() &&
                         rezervariArray[i][2] === date &&
-                        parseInt(rezervariArray[i][3]) === parseInt(nrpers)
+                        parseInt(rezervariArray[i][3]) === Number(nrpers)
                   ) {
                         console.log('AM GASIT. STERGEM');
                         rezervariArray.splice(i, 1);
@@ -150,7 +156,6 @@ window.onload = function () {
             localStorage.setItem('rezervari', rezervariStr);
       }
 
-      // * DONE
       function loadReservations() {
             const rezervariStr = localStorage.getItem('rezervari');
             let rezervariArray = '';
@@ -171,10 +176,8 @@ window.onload = function () {
       }
 
       // TODO:
-      // validari la inputs - minim 3 contidii de regex
       // minim 4 interogari din API Math, Date, String, etc
+      // - am folosit toUpperCase, (JSON.parse, JSON.stringify),
+      //
       // consola clean - fara log-uri
-      // validari de inputs cu regex - cica minim 3 conditii?
-      // "Rezervari" cu taote rezervarile facute (localStorage + creere Block + Math, Date, String API)
-      // Anulare rezervari (setTimeout + delete block)
 };
