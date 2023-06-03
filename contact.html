@@ -1,52 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Restaurant</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <a id="logo">Copperwood Kitchen</a>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Restaurant</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <header>
+            <a id="logo">Copperwood Kitchen</a>
+            <input type="checkbox" id="menu-bar-button" />
+            <label for="menu-bar-button"
+                ><img src="img/burger-icon.svg" alt="menu-icon"
+            /></label>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li>
+                        <a href="menu.html">Menu</a>
+                        <ul>
+                            <li><a href="menu.html">Soup</a></li>
+                            <li><a href="menu.html">Salads</a></li>
+                            <li><a href="menu.html">Pizza</a></li>
+                            <li><a href="menu.html">Pasta</a></li>
+                            <li><a href="menu.html">Sweets</a></li>
+                            <li><a href="menu.html">Drinks</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
 
-        <input type="checkbox" id="menu-bar-button">
-        <label for="menu-bar-button"><img src="img/burger-icon.svg" alt="menu-icon"></label>
+        <section id="contact">
+            <h2 class="reservation-text">Make a reservation today!</h2>
+            <form id="form" action="https://undeva.com" method="post">
+                <label for="nume">Nume:</label>
+                <input
+                    id="name"
+                    type="text"
+                    name="name"
+                    rows="1"
+                    cols="100"
+                    placeholder="Your Name"
+                    pattern="[a-zA-z ']+"
+                    required />
+                <label for="nume">Email:</label>
+                <input
+                    id="email"
+                    type="text"
+                    name="email"
+                    rows="1"
+                    cols="100"
+                    placeholder="Your Email"
+                    pattern="^[a-zA-Z0-9]+[^@]+@[^@]+\.[^@]+$"
+                    required />
 
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About us</a></li>
-                <li><a href="menu.html">Menu</a>
-                    <ul>
-                        <li><a href="menu.html">Soup</a></li>
-                        <li><a href="menu.html">Salads</a></li>
-                        <li><a href="menu.html">Pizza</a></li>
-                        <li><a href="menu.html">Pasta</a></li>
-                        <li><a href="menu.html">Sweets</a></li>
-                        <li><a href="menu.html">Drinks</a></li>
-                    </ul>
-                </li>
-                <li><a href="reviews.html">Reviews</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+                <!-- ^ Matches the beginning of the string (or line if multiline)
+                [^@] Match any character that is not in this set (i.e. not "@")
+                + Match one or more of this
+                @ Match "@" character
+                [^@] Match any character that is not in this set
+                + Match one or more
+                \. Match "." (full stop) character (backslash escapes the full stop)
+                [^@] Match any character that is not in this set
+                + Match one or more
+                $ Matches the end of the string (or line if multiline)
 
-    <section class="contact">
-        <h2 class="reservation-text">Make a reservation today!</h2>
-        <textarea name="name" id="name" rows="1" cols="100" placeholder="Your Name"></textarea>
-        <textarea name="email" id="email" rows="1" cols="100" placeholder="Email"></textarea>
-        <h2>Date:</h2>
-        <input id="date" type="date">
-        <h2>Number of seats:</h2>
-        <input id="nrpers" type="number">
-        <input id="submit" value="Submit!" type="submit">
+                And in plain language:
+                    Start at beginning of string or line
+                    Include all characters except @ until the @ sign
+                    Include the @ sign
+                    Include all characters except @ after the @ sign until the full stop
+                    Include all characters except @ after the full stop
+                    Stop at the end of the string or line -->
 
+                <label for="date">Date:</label>
+                <input id="date" type="date" required />
+                <label for="nrpers">Number of seats:</label>
+                <input id="nrpers" type="number" required min="1" />
+                <input id="submit" value="Submit!" type="submit" />
+            </form>
+        </section>
 
-    </section>
-
-    <footer>
-        <p>Realizat de Esanu Iustin</p>
-    </footer>
-</body>
+        <footer>
+            <p>Realizat de Esanu Iustin</p>
+        </footer>
+    </body>
 </html>
